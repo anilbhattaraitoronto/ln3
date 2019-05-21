@@ -1,0 +1,223 @@
+* {
+  padding: 0;
+  margin: 0;
+  --theme1: darkblue;
+  --theme2: rgb(185, 8, 8);
+  font-family: Arial;
+}
+
+.main-header {
+  padding: 16px 0;
+  background: white;
+}
+.masthead {
+  cursor: pointer;
+  text-align: center;
+  color: var(--theme1);
+  text-transform: uppercase;
+  word-spacing: 16px;
+  letter-spacing: 2px;
+  font-size: 1.8em;
+}
+.masthead:hover {
+  color: var(--theme2);
+}
+.wrapper {
+  /* background: rgb(233, 228, 228); */
+  padding: 10px;
+}
+.wrapper,
+.main-header {
+  width: 95%;
+  margin: auto;
+}
+#landing {
+  position: relative;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(218, 227, 230);
+}
+#start-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 80px;
+  margin: auto;
+  font-size: 1.4em;
+  background: var(--theme2);
+  color: white;
+  transition: 500ms ease-in-out;
+  border: none;
+}
+#start-button:hover {
+  background: var(--theme1);
+}
+.level-title {
+  color: var(--theme2, darkred);
+  text-align: center;
+  font-size: 1.1em;
+  padding: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background: var(--theme1, darkblue);
+  margin: 3px auto;
+}
+.beginner-nav,
+.intermediate-nav,
+.advanced-nav,
+.about-nav {
+  display: flex;
+  justify-content: center;
+  background: white;
+  margin: 3px auto;
+}
+.main-link {
+  padding: 3px 8px;
+  cursor: pointer;
+  color: white;
+  transition: 250ms ease-in-out;
+}
+.beginner-link,
+.intermediate-link,
+.advanced-link,
+.about-link {
+  color: var(--theme1);
+  padding: 3px 8px;
+  cursor: pointer;
+  box-shadow: 0 0 2px gray;
+  border-top-right-radius: 8px;
+}
+.beginner-link:hover,
+.intermediate-link:hover,
+.advanced-link:hover,
+.about-link:hover {
+  color: var(--theme2);
+}
+.main-link:hover {
+  color: darkkhaki;
+}
+.lesson {
+  /* background: lightblue; */
+  position: relative;
+  /* padding: 5px 0; */
+  margin: auto;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 0 2px gray;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lesson button:nth-child(1) {
+  cursor: pointer;
+  padding: 5px 12px;
+  font-size: 0.9em;
+  display: block;
+  background: var(--theme2);
+  color: white;
+  transition: 500ms ease-in-out;
+  border: none;
+  margin: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lesson button:nth-child(2) {
+  cursor: pointer;
+  padding: 5px 12px;
+  font-size: 0.9em;
+  display: block;
+  background: var(--theme2);
+  color: white;
+  transition: 500ms ease-in-out;
+  border: none;
+  margin: 2px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.lesson button:hover {
+  background: var(--theme1);
+}
+.lesson-title {
+  text-align: center;
+  color: white;
+  background: var(--theme2);
+  padding: 5px 0;
+  /* box-shadow: 0 0 1px gray; */
+}
+.item-list,
+#present-list,
+#past-list,
+#future-list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  background: white;
+  margin: auto;
+}
+.english {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+}
+.picture {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+.sound {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.nepali {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(231, 226, 226);
+  text-align: center;
+  color: var(--theme1);
+  font-size: 4em;
+  line-height: 0;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+#present-list .nepali,
+#past-list .nepali,
+#future-list .nepali {
+  line-height: 32px;
+  font-size: 1.8em;
+  height: 230px;
+  width: 230px;
+  /* display: initial; */
+}
+
+footer {
+  background: var(--theme1);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin: auto;
+}

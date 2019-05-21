@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Learn Nepali</title>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <h1 class="masthead">Learn Nepali</h1>
+    </header>
+    <section class="wrapper">
+      <section id="landing" class="main-section">
+        <button id="start-button">Start Learning Nepali</button>
+      </section>
+      <section id="lessons" class="main-section">
+        <nav class="main-nav">
+          <a class="main-link link" onclick="showSection('section', 0)"
+            >Beginner</a
+          >
+          <a class="main-link link" onclick="showSection('section', 1)"
+            >Intermediate</a
+          >
+          <a class="main-link link" onclick="showSection('section', 2)"
+            >Advanced</a
+          >
+          <a class="main-link link" onclick="showSection('section', 3)"
+            >About</a
+          >
+        </nav>
+        <div id="beginner-section" class="lesson-section section">
+          <h2 class="level-title">Beginner</h2>
+          <nav class="lesson-nav beginner-nav">
+            <a
+              class="beginner-link link"
+              onclick="showSection('beginner-lesson', 0)"
+              >Vowels</a
+            >
+            <a
+              class="beginner-link link"
+              onclick="showSection('beginner-lesson', 1)"
+              >Roots</a
+            >
+            <a
+              class="beginner-link link"
+              onclick="showSection('beginner-lesson', 2)"
+              >Composites</a
+            >
+          </nav>
+          <main id="vowel-lesson" class="beginner-lesson lesson">
+            <section id="vowel-lesson-title" class="lesson-title"></section>
+            <section id="vowel-list" class="item-list"></section>
+            <div class="button-container">
+              <button onclick="vowelLesson.getPreviousItem('vowel-list')">
+                Prev
+              </button>
+              <button
+                class="next-item"
+                onclick="vowelLesson.getNextItem('vowel-list')"
+              >
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="root-lesson" class="beginner-lesson lesson">
+            <section id="root-lesson-title" class="lesson-title"></section>
+            <section id="root-list" class="item-list"></section>
+            <div class="button-container">
+              <button onclick="rootLesson.getPreviousItem('root-list')">
+                Prev
+              </button>
+              <button onclick="rootLesson.getNextItem('root-list')">
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="composite-lesson" class="beginner-lesson lesson">
+            <section id="composite-lesson-title" class="lesson-title"></section>
+            <section id="composite-list" class="item-list"></section>
+            <div class="button-container">
+              <button
+                onclick="compositeLesson.getPreviousItem('composite-list')"
+              >
+                Prev
+              </button>
+              <button onclick="compositeLesson.getNextItem('composite-list')">
+                Next
+              </button>
+            </div>
+          </main>
+        </div>
+        <div id="intermediate-section" class="lesson-section section">
+          <h2 class="level-title">Intermediate</h2>
+          <nav class="intermediate-nav">
+            <a
+              class="intermediate-link link"
+              onclick="showSection('intermediate-lesson', 0)"
+              >Nouns</a
+            >
+            <a
+              class="intermediate-link link"
+              onclick="showSection('intermediate-lesson', 1)"
+              >Verbs</a
+            >
+            <a
+              class="intermediate-link link"
+              onclick="showSection('intermediate-lesson', 2)"
+              >Adjectives</a
+            >
+          </nav>
+          <main id="noun-lesson" class="intermediate-lesson lesson">
+            <section id="noun-lesson-title" class="lesson-title"></section>
+            <section id="noun-list" class="item-list"></section>
+            <div class="button-container">
+              <button onclick="nounLesson.getPreviousItem('noun-list')">
+                Prev
+              </button>
+              <button onclick="nounLesson.getNextItem('noun-list')">
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="verb-lesson" class="intermediate-lesson lesson">
+            <section id="verb-lesson-title" class="lesson-title"></section>
+            <section id="verb-list" class="item-list"></section>
+            <div class="button-container">
+              <button onclick="verbLesson.getPreviousItem('verb-list')">
+                Prev
+              </button>
+              <button onclick="verbLesson.getNextItem('verb-list')">
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="adjective-lesson" class="intermediate-lesson lesson">
+            <section id="adjective-lesson-title" class="lesson-title"></section>
+            <section id="adjective-list" class="item-list"></section>
+            <div class="button-container">
+              <button
+                onclick="adjectiveLesson.getPreviousItem('adjective-list')"
+              >
+                Prev</button
+              ><button onclick="adjectiveLesson.getNextItem('adjective-list')">
+                Next
+              </button>
+            </div>
+          </main>
+        </div>
+        <div id="advanced-section" class="lesson-section section">
+          <h2 class="level-title">Advanced</h2>
+          <nav class="advanced-nav">
+            <a
+              class="advanced-link link"
+              onclick="showSection('advanced-lesson', 0)"
+              >Present</a
+            >
+            <a
+              class="advanced-link link"
+              onclick="showSection('advanced-lesson', 1)"
+              >Past</a
+            >
+            <a
+              class="advanced-link link"
+              onclick="showSection('advanced-lesson', 2)"
+              >Future</a
+            >
+            <a class="advanced-link link">Read</a>
+          </nav>
+          <main id="present-lesson" class="advanced-lesson lesson">
+            <section id="present-lesson-title" class="lesson-title"></section>
+            <section id="present-list"></section>
+            <div class="button-container">
+              <button onclick="presentLesson.getPreviousItem('present-list')">
+                Prev
+              </button>
+              <button onclick="presentLesson.getNextItem('present-list')">
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="past-lesson" class="advanced-lesson lesson">
+            <section id="past-lesson-title" class="lesson-title"></section>
+            <section id="past-list"></section>
+            <div class="button-container">
+              <button onclick="pastLesson.getPreviousItem('past-list')">
+                Prev
+              </button>
+              <button onclick="pastLesson.getNextItem('past-list')">
+                Next
+              </button>
+            </div>
+          </main>
+          <main id="future-lesson" class="advanced-lesson lesson">
+            <section id="future-lesson-title" class="lesson-title"></section>
+            <section id="future-list"></section>
+            <div class="button-container">
+              <button onclick="futureLesson.getPreviousItem('future-list')">
+                Prev
+              </button>
+              <button onclick="futureLesson.getNextItem('future-list')">
+                Next
+              </button>
+            </div>
+          </main>
+        </div>
+        <div id="about-section" class="lesson-section section">
+          <h2 class="level-title">About Learn Nepali</h2>
+          <nav class="about-nav">
+            <a class="about-link link" onclick="showSection('about-lesson', 0)"
+              >Letters</a
+            >
+            <a class="about-link link" onclick="showSection('about-lesson', 1)"
+              >Words</a
+            >
+            <a class="about-link link" onclick="showSection('about-lesson', 2)"
+              >Sentences</a
+            >
+            <a class="about-link link" onclick="showSection('about-lesson', 3)"
+              >LN App</a
+            >
+          </nav>
+          <main id="letter-lesson" class="about-lesson lesson">
+            <section id="letter-lesson-title" class="lesson-title">
+              About Letters
+            </section>
+            <section id="letter-list">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                nesciunt laboriosam velit. Aperiam doloribus iure nesciunt
+                minus, delectus dicta reprehenderit velit saepe sed, repellat
+                cum soluta voluptate expedita quam eaque commodi asperiores sint
+                ex. Quam dolore hic minus obcaecati dicta.
+              </p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
+                sit veniam, cumque ipsum non ex quam! Provident vero ad neque
+                cum eius accusantium. Eius veniam natus nesciunt harum at
+                dolores, quaerat iste voluptate officia id quas quod impedit
+                ipsa dolore inventore aut? Consequatur aut at voluptas? Quis
+                vero dolorum voluptatum?
+              </p>
+            </section>
+          </main>
+          <main id="word-lesson" class="about-lesson lesson">
+            <section id="word-lesson-title" class="lesson-title">
+              About Words
+            </section>
+            <section id="word-list">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                nesciunt laboriosam velit. Aperiam doloribus iure nesciunt
+                minus, delectus dicta reprehenderit velit saepe sed, repellat
+                cum soluta voluptate expedita quam eaque commodi asperiores sint
+                ex. Quam dolore hic minus obcaecati dicta.
+              </p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
+                sit veniam, cumque ipsum non ex quam! Provident vero ad neque
+                cum eius accusantium. Eius veniam natus nesciunt harum at
+                dolores, quaerat iste voluptate officia id quas quod impedit
+                ipsa dolore inventore aut? Consequatur aut at voluptas? Quis
+                vero dolorum voluptatum?
+              </p>
+            </section>
+          </main>
+          <main id="sentence-lesson" class="about-lesson lesson">
+            <section id="sentence-lesson-title" class="lesson-title">
+              About Sentences
+            </section>
+            <section id="sentence-list">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                nesciunt laboriosam velit. Aperiam doloribus iure nesciunt
+                minus, delectus dicta reprehenderit velit saepe sed, repellat
+                cum soluta voluptate expedita quam eaque commodi asperiores sint
+                ex. Quam dolore hic minus obcaecati dicta.
+              </p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
+                sit veniam, cumque ipsum non ex quam! Provident vero ad neque
+                cum eius accusantium. Eius veniam natus nesciunt harum at
+                dolores, quaerat iste voluptate officia id quas quod impedit
+                ipsa dolore inventore aut? Consequatur aut at voluptas? Quis
+                vero dolorum voluptatum?
+              </p>
+            </section>
+          </main>
+          <main id="app-lesson" class="about-lesson lesson">
+            <section id="app-lesson-title" class="lesson-title">
+              About Installing App
+            </section>
+            <section id="app-list">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+                nesciunt laboriosam velit. Aperiam doloribus iure nesciunt
+                minus, delectus dicta reprehenderit velit saepe sed, repellat
+                cum soluta voluptate expedita quam eaque commodi asperiores sint
+                ex. Quam dolore hic minus obcaecati dicta.
+              </p>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
+                sit veniam, cumque ipsum non ex quam! Provident vero ad neque
+                cum eius accusantium. Eius veniam natus nesciunt harum at
+                dolores, quaerat iste voluptate officia id quas quod impedit
+                ipsa dolore inventore aut? Consequatur aut at voluptas? Quis
+                vero dolorum voluptatum?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptates itaque quia minima eveniet esse, voluptatibus harum
+                laboriosam blanditiis. Commodi fugit non alias? Ea numquam
+                repellendus quam minus odit optio illo nam! Impedit sunt
+                voluptas vitae officiis nesciunt, labore consectetur doloribus
+                magnam! Quidem, assumenda commodi consequuntur facere tempore
+                magni incidunt. Dolore.
+              </p>
+            </section>
+          </main>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <p>&copy; Anil Bhattarai, 2019</p>
+    </footer>
+
+    <script src="js/lesson.js"></script>
+  </body>
+</html>
